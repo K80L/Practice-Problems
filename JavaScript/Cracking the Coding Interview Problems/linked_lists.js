@@ -11,24 +11,17 @@ function removeDups(linkedList) {
     } else {
       hash[n.data] = true // we don't have the value yet, so we add it to the hash
     }
-    n = n.next // go to to next node
+    n = n.next // go to next node
   }
 }
 
-function kthLastEle(node, k, counter) {
-  //once we hit the base case, start the counter at 1
-  //then once we hit counter === k, return the value of that node
-  //else, keep going back up to the previous call and add 1 to the counter
-  let n = node;
-  if (n.next === null) return 0; //base case, no next node
+//1 -> 2 -> 3 -> null
+function kthLastEle(linkedListHead, k) {
+  if (linkedListHead === null) return 0;
 
-  if (counter === k) { 
-    return n.value; 
-  } else {
-    counter++;
-    return kthLastEle(n.next, k, counter)
-  }
+  let index = kthLastEle(linkedListHead.next, k) + 1;
 
+  if (index === k) return linkedListHead.value
 
-
+  return index;
 }
