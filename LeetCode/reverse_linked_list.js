@@ -28,10 +28,10 @@ function revLLIt(head) {
   return newHead
 }
 
-function revLLrec(head) {
+function revLLRec(head) {
 
   if (!head || !head.next) return head //base case, list of 1 element is already reversed
-  let newHead = revLLrec(head.next); //reverse the next list of elements
+  let newHead = revLLRec(head.next); //reverse the next list of elements
   head.next.next = head;  //set the reversed linked list's pointer back to me, it will be the last element in the reversed linked list
   head.next = null; //set my next to null
 
