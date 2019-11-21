@@ -48,3 +48,4 @@ function addToList(list, node, depth) {
   addToList(list, node.left, depth+1)
   addToList(list, node.right, depth+1)
 }
+
