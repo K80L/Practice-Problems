@@ -3,10 +3,6 @@
 
 // Given linked list -- head = [4,5,1,9], which looks like following:
 
-
-
- 
-
 // Example 1:
 
 // Input: head = [4,5,1,9], node = 5
