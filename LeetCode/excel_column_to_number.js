@@ -8,7 +8,7 @@
 //     ...
 //     Z -> 26
 //     AA -> 27
-//     AB -> 28 
+//     AB -> 28
 //     ...
 // Example 1:
 
@@ -24,14 +24,15 @@
 // Output: 701
 
 var titleToNumber = function(s) {
-  let alphabet = ('abcdefghijklmnopqrstuvwxyz');
+  let alphabet = "abcdefghijklmnopqrstuvwxyz";
   let num = 0;
   let length = s.length; //2
-  
-  for (let i=0; i<s.length; i++) {
-    console.log(Math.pow(26, length-i-1))
-    num += (Math.pow(26, length-i-1) * (alphabet.indexOf(s[i].toLowerCase()) + 1)); 
+
+  for (let i = 0; i < s.length; i++) {
+    console.log(Math.pow(26, length - i - 1));
+    num +=
+      Math.pow(26, length - i - 1) * (alphabet.indexOf(s[i].toLowerCase()) + 1);
   }
-  
-  return num
+
+  return num;
 };

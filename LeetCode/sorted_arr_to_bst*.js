@@ -14,14 +14,13 @@
 //    /   /
 //  -10  5
 var sortedArrayToBST = function(nums) {
-  
   if (nums.length === 0) return null;
-  
-  let midIdx = Math.floor(nums.length/2)
-  let mid = nums[Math.floor(nums.length/2)];
+
+  let midIdx = Math.floor(nums.length / 2);
+  let mid = nums[Math.floor(nums.length / 2)];
   let root = new TreeNode(mid);
   root.left = sortedArrayToBST(nums.slice(0, midIdx));
-  root.right = sortedArrayToBST(nums.slice(midIdx+1));
-  
+  root.right = sortedArrayToBST(nums.slice(midIdx + 1));
+
   return root;
 };

@@ -22,7 +22,7 @@ root.right.right = new treeNode(7);
 
 function maxDepth(root) {
   if (!root) return 0; //base case when there are no more nodes
-  return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1
+  return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;
 }
 
 // Explaination:

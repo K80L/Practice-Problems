@@ -19,15 +19,15 @@
 var containsDuplicate = function(nums) {
   //put them all in a hash, if any value === 2, return true
   let map = {};
-  for (let i=0; i<nums.length; i++) {
-      if(!map[nums[i]]) map[nums[i]]=0;
-      map[nums[i]]++;
+  for (let i = 0; i < nums.length; i++) {
+    if (!map[nums[i]]) map[nums[i]] = 0;
+    map[nums[i]]++;
   }
-  
-  return Object.values(map).some(val => val >= 2)
+
+  return Object.values(map).some(val => val >= 2);
 };
 
 //better w/ set
 function containsDuplicate(nums) {
-  return (new Set(nums).size !== nums.length);
+  return new Set(nums).size !== nums.length;
 }

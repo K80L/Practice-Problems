@@ -1,6 +1,5 @@
 // Given a non-negative integer numRows, generate the first numRows of Pascal's triangle.
 
-
 // In Pascal's triangle, each number is the sum of the two numbers directly above it.
 
 // Example:
@@ -17,19 +16,19 @@
 var generate = function(numRows) {
   if (numRows === 0) return [];
   let pasc = [];
-  
-  for (let i=0; i<numRows; i++) {
+
+  for (let i = 0; i < numRows; i++) {
     let row = [];
-    
-    for (let j=0; j<=i; j++) {
-      if (j===0 || j===i) {
-        row.push(1)
+
+    for (let j = 0; j <= i; j++) {
+      if (j === 0 || j === i) {
+        row.push(1);
       } else {
-        row.push(pasc[i-1][j-1] + pasc[i-1][j])
+        row.push(pasc[i - 1][j - 1] + pasc[i - 1][j]);
       }
     }
-    pasc.push(row)
+    pasc.push(row);
   }
-  
+
   return pasc;
 };

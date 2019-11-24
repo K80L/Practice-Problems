@@ -11,21 +11,18 @@
 // Input: [2,2,1,1,1,2,2]
 // Output: 2
 
-
 //1 pass O(n), 0(1) memory
 var majorityElement = function(nums) {
-
-  let major = null; 
+  let major = null;
   let counter = 0;
-  
-  for (let i=0; i<nums.length; i++) {
+
+  for (let i = 0; i < nums.length; i++) {
     if (counter === 0) major = nums[i];
     if (major === nums[i]) counter++;
     if (major !== nums[i]) counter--;
   }
-  return major
+  return major;
 };
-
 
 // var majorityElement = function(nums) {
 //   let hash = {};
