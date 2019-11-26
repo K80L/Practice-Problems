@@ -50,3 +50,23 @@ class Solution:
             i += 1
 
         return max(subs)
+
+    def maxSubArrayRec(self, nums: List[int]) -> int:
+        # [-2,1,-3,4,-1,2,1,-5,4]
+        # O(n) space and time
+        # 1. starting at first element, that is the best I can do, so take it as the max value
+        # 2. then look at the next element, should I continue adding or should I start a new subarray starting at the current element?
+        # 3. keep doing that and add the max values to an array
+        # 4. return the max value of that array
+
+        temp = maxSum = nums[0]
+        i = 1
+
+        while i < len(nums):
+            temp = max(nums[i], nums[i] + temp)
+            if temp > maxSum:
+                maxSum = temp
+            #[-2, 1, -2, 4, 3, 5, 6]
+            i += 1
+
+        return maxSum
