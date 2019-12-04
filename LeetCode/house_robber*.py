@@ -1,6 +1,9 @@
-# You are a professional robber planning to rob houses along a street. Each house has a certain amount of money stashed, the only constraint stopping you from robbing each of them is that adjacent houses have security system connected and it will automatically contact the police if two adjacent houses were broken into on the same night.
+# You are a professional robber planning to rob houses along a street. Each house has a certain amount of money stashed,
+# the only constraint stopping you from robbing each of them is that adjacent houses have security system connected and it will
+# automatically contact the police if two adjacent houses were broken into on the same night.
 
-# Given a list of non-negative integers representing the amount of money of each house, determine the maximum amount of money you can rob tonight without alerting the police.
+# Given a list of non-negative integers representing the amount of money of each house, determine the maximum amount of
+# money you can rob tonight without alerting the police.
 
 # Example 1:
 
@@ -16,7 +19,6 @@
 #              Total amount you can rob = 2 + 9 + 1 = 12.
 
 
-# Recursive Solution: TLE
 class Solution:
     def rob(self, nums: List[int]) -> int:
 
@@ -31,6 +33,8 @@ class Solution:
             i += 1
         return memo[-1]
 
+
+# Recursive Solution: TLE
         # def rob_max(arr, start):
         #     try:
         #         return arr[start] + max(rob_max(arr, start+2), rob_max(arr, start+3))
