@@ -23,25 +23,21 @@
 
 var shortestSubarray = function(A, K) {
   let P = [0];
-  let minDist = A.length + 1;
-  let arr = [];
+  for (let a of A) P.push(a + P[P.length - 1]);
 
-  for (let i = 0; i < A.length; i++) {
-    P.push(A[i] + P[P.length - 1]);
-  }
+  let arr = [];
+  let dist = A.length + 1;
 
   for (let y = 0; y < P.length; y++) {
-    while (P[y] - P[arr[0]] >= K && arr.length > 0) {
-      minDist = Math.min(minDist, y - arr[0]);
+    while (arr.length > 0 && P[y] - P[arr[0]] >= K) {
+      dist = Math.min(dist, y - arr[0]);
       arr.shift();
     }
-
-    if (P[y] <= P[arr[arr.length - 1]] && arr.length > 0) {
+    while (arr.length > 0 && P[y] <= P[arr[arr.length - 1]]) {
       arr.pop();
     }
-
     arr.push(y);
   }
 
-  return minDist !== A.length + 1 ? minDist : -1;
+  return dist !== A.length + 1 ? dist : -1;
 };
