@@ -1,7 +1,7 @@
 // Implement a min heap
 // methods: peek(), poll(), add(item), heapifyUp(), heapifyDown()
 
-class Heap {
+class minHeap {
   constructor(capacity) {
     this.size = 0;
     this.capacity = capacity;
