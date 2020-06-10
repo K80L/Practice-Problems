@@ -46,7 +46,7 @@ function mergeListsRecur(l1, l2) {
 function mergeListsRecur(l1, l2) {
   if (!l1 || !l2) return l1 || l2;
 
-  if (l1 < l2) {
+  if (l1.val < l2.val) {
     l1.next = mergeListsRecur(l1.next, l2);
     return l1;
   } else {

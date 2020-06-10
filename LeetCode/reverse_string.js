@@ -28,3 +28,13 @@ var reverseString = function(s) {
     pointer2--;
   }
 };
+
+revStrRec = str => {
+  if (str.length === 0) return "";
+  let rev = "";
+  rev += revStrRec(str.slice(1)) + str[0];
+
+  return rev;
+};
+
+console.log(revStrRec("Hello World"));

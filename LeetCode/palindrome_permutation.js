@@ -1,13 +1,6 @@
 // 266. Palindrome Permutation
 // Easy
 
-// 260
-
-// 43
-
-// Favorite
-
-// Share
 // Given a string, determine if a permutation of the string could form a palindrome.
 
 // Example 1:
@@ -23,7 +16,7 @@
 // Input: "carerac"
 // Output: true
 
-var canPermutePalindrome = function(s) {
+var canPermutePalindrome = function (s) {
   let hash = {};
   for (let i = 0; i < s.length; i++) {
     if (!hash[s[i]]) hash[s[i]] = 0;
